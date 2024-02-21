@@ -6,7 +6,8 @@ import 'animate.css';
 import { BrowserRouter } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./dist/css/main.css";
+// import "./dist/css/main.css";
+import "./main.css"
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
