@@ -24,7 +24,7 @@ const HomePage = () => {
           <Row className="header-box d-flex align-items-center pt-lg-5">
             <Col lg="6">
               <h1 className="mb-4 animate__animated animate__fadeInLeft animate__delay-1s">
-                Temukan <br /> <span>Bakatmu di dunia IT</span> <br />
+                Temukan <br /> <span>Bakatmu di dunia digital</span> <br />
                 bersama kami!
               </h1>
               <p className="mb-4  animate__animated animate__fadeInLeft animate__delay-1s">

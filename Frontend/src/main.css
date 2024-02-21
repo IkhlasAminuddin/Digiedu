@@ -464,3 +464,8 @@ header {
 .syarat-ketentuan-page .syarat-ketentuan h1{
     --animate-delay: 0.4s
 }
+
+/* STYLE SIGN IN MODAL */
+.signin .signin-modal {
+    margin-top: 100px;
+}

@@ -2,11 +2,12 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { navLinks } from "../data/index";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import CourseLogo from '../assets/img/CourseLogo.png'
+import SignInForm from "../Forms/SignInForm";
 
 const NavbarComponent = () => {
   const [changeColor, setChangeColor] = useState(false);
   const [expanded, setExpanded] = useState(false)
+  const [show, setShow] = useState(false)
 
   const changeBackgroundColor = () => {
     if (window.scrollY > 10) {
@@ -22,7 +23,15 @@ const NavbarComponent = () => {
     window.addEventListener("scroll", changeBackgroundColor)
   })
 
+  const openModal = () => {
+    setShow(true)
+  }
+  const closeModal = () => {
+    setShow(false)
+  }
+
   return (
+    <>
     <div>
       <Navbar expanded={expanded} expand="lg" className={changeColor ? "color-active" : ""}>
         <Container>
@@ -50,7 +59,7 @@ const NavbarComponent = () => {
               })}
             </Nav>
             <div className="text-center">
-              <button className="btn btn-outline-danger rounded-1">
+              <button className="btn btn-outline-danger rounded-1" onClick={openModal}>
                 Join With Us!
               </button>
             </div>
@@ -58,6 +67,11 @@ const NavbarComponent = () => {
         </Container>
       </Navbar>
     </div>
+    
+    <SignInForm
+    show={show}
+    closeModal = {closeModal}/>
+    </>
   );
 };
 
