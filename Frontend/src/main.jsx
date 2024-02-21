@@ -12,6 +12,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
+//mungkin karena nama main.jsx yg harusnya Main.jsx
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
