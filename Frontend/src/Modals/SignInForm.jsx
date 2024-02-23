@@ -9,10 +9,12 @@ import SignUpForm from "./SignUpForm";
 const SignInForm = (props) => {
   const { show, closeModal } = props;
   const [seePass, setSeePass] = useState(false);
-  const [showSignUp, setShowSignUp] = useState(false)
+  const [showSignUp, setShowSignUp] = useState(false);
   const [input, setInput] = useState({
-    email: "", password: ""
-  })
+    email: "",
+    password: "",
+  });
+
 
   const openPass = () => {
     setSeePass(true);
@@ -22,42 +24,56 @@ const SignInForm = (props) => {
   };
 
   const openModalSignUp = () => {
-    setShowSignUp(true)
+    setShowSignUp(true);
+    closeModal();
+  };
+
+  const closeModalSignUp = () => {
+    setShowSignUp(false);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setInput({
+      ...input,
+      [name]: value,
+    });
+  };
+
+  const login = () => {
+    localStorage.setItem('user', input.email)
     closeModal()
   }
 
-  const closeModalSignUp = () => {
-    setShowSignUp(false)
-  }
+  console.log("input sign In:", input)
 
-  const handleChange = (event) => {
-    const {name, value} = event.target
-    setInput({
-      ...input,
-      [name]: value
-    })
-  }
 
   return (
     <>
-      <div className="signin-form">
-        <Modal show={show} onHide={closeModal} className="form-modal mt-5 py-5">
-          <Modal.Header closeButton>
+      <div>
+        <Modal show={show} onHide={closeModal} className="mt-5 py-5">
+          <Modal.Header>
             <Modal.Title>Sign In</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form>
+            <Form className="form-modal">
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control type="email" placeholder="Enter email" onChange={handleChange} name="email"/>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 {seePass ? (
                   <Row>
-                    <Col sm={10}>
-                      <Form.Control type="text" placeholder="Password" name='password' onChange={handleChange} />
+                    <Col>
+                      <Form.Control
+                        type="text"
+                        placeholder="Password"
+                        name="password"
+                        onChange={handleChange}
+                        value={input.password}
+                      />
                     </Col>
                     <Col sm={2}>
                       <Button variant="secondary" onClick={hidePass}>
@@ -66,9 +82,16 @@ const SignInForm = (props) => {
                     </Col>
                   </Row>
                 ) : (
-                  <Row>
-                    <Col sm={10}>
-                      <Form.Control type="password" placeholder="Password" name='password' onChange={handleChange} />
+                  <div className="baris-password">
+                  <Row className="justify-content">
+                    <Col>
+                      <Form.Control
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        onChange={handleChange}
+                        value={input.password}
+                      />
                     </Col>
                     <Col sm={2}>
                       <Button variant="secondary" onClick={openPass}>
@@ -76,12 +99,14 @@ const SignInForm = (props) => {
                       </Button>
                     </Col>
                   </Row>
+                  </div>
                 )}
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Row>
                   <p>
-                    No account yet? <Link onClick={openModalSignUp}>Sign Up!</Link>
+                    No account yet?{" "}
+                    <Link onClick={openModalSignUp}>Sign Up!</Link>
                   </p>
                 </Row>
               </Form.Group>
@@ -91,13 +116,11 @@ const SignInForm = (props) => {
             <Button variant="secondary" onClick={closeModal}>
               Close
             </Button>
-            <Button variant="success">Login</Button>
+            <Button variant="success" onClick={login}>Login</Button>
           </Modal.Footer>
         </Modal>
       </div>
-      <SignUpForm 
-      show = {showSignUp}
-      closeModal = {closeModalSignUp}/>
+      <SignUpForm show={showSignUp} closeModal={closeModalSignUp} />
     </>
   );
 };

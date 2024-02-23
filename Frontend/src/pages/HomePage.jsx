@@ -4,6 +4,7 @@ import { kelasTerbaru, dataSwiper } from "../data/index";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import FaqComponent from "../components/FaqComponent";
+import { useState } from "react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -11,9 +12,24 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
+import BuyClass from "../Modals/BuyClass";
 
 const HomePage = () => {
+  const [idKelas, setIdKelas] = useState(0)
+  const [showKelas, setShowKelas] = useState(false)
+
   let navigate = useNavigate();
+
+  const pilihKelas = (id) => {
+    setIdKelas(id)
+    setShowKelas(true)
+  }
+  const tutupKelas = () => {
+    setIdKelas(0)
+    setShowKelas(false)
+  }
+
+  console.log("cek id kelas: ", idKelas)
 
   return (
     <div className="homepage">
@@ -85,7 +101,7 @@ const HomePage = () => {
                   <h5 className="mb-5 px-3">{kelas.title}</h5>
                   <div className="ket d-flex justify-content-between align-items-center px-3 pb-3">
                     <p className="m-0 text-success fw-bold">{kelas.price}</p>
-                    <button className="btn btn-danger rounded-1">
+                    <button className="btn btn-danger rounded-1" onClick={() => pilihKelas(kelas.id)}>
                       {kelas.buy}
                     </button>
                   </div>
@@ -166,6 +182,10 @@ const HomePage = () => {
       </div>
       {/* Section FAQ */}
       <FaqComponent />
+      <BuyClass 
+      show={showKelas}
+      close={tutupKelas}
+      idKelas = {idKelas}/>
     </div>
   );
 };

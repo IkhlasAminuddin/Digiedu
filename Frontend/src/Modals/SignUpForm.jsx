@@ -39,7 +39,7 @@ const SignUpForm = (props) => {
     <>
       <div>
         <Modal show={show} onHide={closeModal} className="mt-5 py-5">
-          <Modal.Header closeButton>
+          <Modal.Header>
             <Modal.Title>Sign Up</Modal.Title>
           </Modal.Header>
           <Modal.Body>
