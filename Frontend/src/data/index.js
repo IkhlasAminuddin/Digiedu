@@ -65,7 +65,7 @@ export const semuaKelas = [
     title: "UI UX Website Design for Beginner with Figma",
     price: "Rp. 340.000",
     buy: "Beli Kelas",
-    delay: "300",
+    delay: "150",
   },
   {
     id: 3,
@@ -78,7 +78,7 @@ export const semuaKelas = [
     title: "Mastering Web Developer Bootstrap 5",
     price: "Rp. 280.000",
     buy: "Beli Kelas",
-    delay: "600",
+    delay: "300",
   },
   {
     id: 4,
@@ -91,7 +91,7 @@ export const semuaKelas = [
     title: "Mastering Logo with Adobe Illustrator",
     price: "Rp. 420.000",
     buy: "Beli Kelas",
-    delay: "900",
+    delay: "450",
   },
   {
     id: 5,
@@ -117,7 +117,7 @@ export const semuaKelas = [
     title: "Mastering Icon Design with Adobe Illustrator",
     price: "Rp. 300.000",
     buy: "Beli Kelas",
-    delay: "300",
+    delay: "150",
   },
   {
     id: 7,
@@ -130,7 +130,7 @@ export const semuaKelas = [
     title: "Design Vektor with Corel Draw CC for Beginner",
     price: "Rp. 340.000",
     buy: "Beli Kelas",
-    delay: "600",
+    delay: "300",
   },
   {
     id: 8,
@@ -143,7 +143,7 @@ export const semuaKelas = [
     title: "UI UX Design with Adobe XD for Beginner",
     price: "Rp. 400.000",
     buy: "Beli Kelas",
-    delay: "900",
+    delay: "450",
   },
   {
     id: 9,
@@ -185,7 +185,7 @@ export const kelasTerbaru = [
     title: "UI UX Website Design for Beginner with Figma",
     price: "Rp. 340.000",
     buy: "Beli Kelas",
-    delay: "200",
+    delay: "150",
   },
   {
     id: 3,
@@ -198,7 +198,7 @@ export const kelasTerbaru = [
     title: "Mastering Web Developer Bootstrap 5",
     price: "Rp. 280.000",
     buy: "Beli Kelas",
-    delay: "400",
+    delay: "300",
   },
   {
     id: 4,
@@ -211,7 +211,7 @@ export const kelasTerbaru = [
     title: "Mastering Logo with Adobe Illustrator",
     price: "Rp. 420.000",
     buy: "Beli Kelas",
-    delay: "600",
+    delay: "450",
   },
   {
     id: 5,
@@ -237,7 +237,7 @@ export const kelasTerbaru = [
     title: "Mastering Icon Design with Adobe Illustrator",
     price: "Rp. 300.000",
     buy: "Beli Kelas",
-    delay: "200",
+    delay: "150",
   },
 ];
 

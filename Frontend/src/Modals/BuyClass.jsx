@@ -18,15 +18,25 @@ const BuyClass = (props) => {
                   <Modal.Title>{kelas.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <Row>
+                  <Row >
                     <img
                       src={kelas.image}
                       alt="unsplash.com"
                       className="mb-5 rounded-top"
                     />
+                    <div className="star mb-3 px-3">
+                    <i className={kelas.star1}></i>
+                    <i className={kelas.star2}></i>
+                    <i className={kelas.star3}></i>
+                    <i className={kelas.star4}></i>
+                    <i className={kelas.star5}></i>
+                  </div>
                   </Row>
-                  <Row>
-                    <p>Desc: </p>
+                  <Row className="mb-4">
+                    <h5 className="text-success fw-bold">Harga: {kelas.price}</h5>
+                  </Row>
+                  <Row className="mb-4">
+                    <h5>Desc: </h5>
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Alias magni perspiciatis sint. Ut, nulla at. Non
@@ -37,7 +47,7 @@ const BuyClass = (props) => {
                     </p>
                   </Row>
                   <Row>
-                    <p>Keuntungan: </p>
+                    <h5>Keuntungan: </h5>
                     <li>Lorem, ipsum dolor.</li>
                     <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
                     <li>Lorem ipsum dolor sit amet.</li>

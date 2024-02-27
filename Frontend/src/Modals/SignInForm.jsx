@@ -50,19 +50,19 @@ const SignInForm = (props) => {
 
   return (
     <>
-      <div>
+      <div className="signin-modal">
         <Modal show={show} onHide={closeModal} className="mt-5 py-5">
           <Modal.Header>
             <Modal.Title>Sign In</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form className="form-modal">
+            <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" onChange={handleChange} name="email"/>
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 {seePass ? (
                   <Row>
@@ -82,9 +82,9 @@ const SignInForm = (props) => {
                     </Col>
                   </Row>
                 ) : (
-                  <div className="baris-password">
-                  <Row className="justify-content">
-                    <Col>
+                  <div>
+                  <Row>
+                    <Col >
                       <Form.Control
                         type="password"
                         placeholder="Password"

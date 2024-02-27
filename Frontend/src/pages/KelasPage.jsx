@@ -1,8 +1,24 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { semuaKelas } from "../data/index";
 import FaqComponent from "../components/FaqComponent";
+import { useState } from "react";
+import BuyClass from "../Modals/BuyClass";
+
 
 const KelasPage = () => {
+
+  const [idKelas, setIdKelas] = useState(0)
+  const [showKelas, setShowKelas] = useState(false)
+
+  const pilihKelas = (id) => {
+    setIdKelas(id)
+    setShowKelas(true)
+  }
+  const tutupKelas = () => {
+    setIdKelas(0)
+    setShowKelas(false)
+  }
+
   return (
     <div className="kelas-page">
       <div className="kelas min-vh-100">
@@ -37,7 +53,7 @@ const KelasPage = () => {
                   <h5 className="mb-5 px-3">{kelas.title}</h5>
                   <div className="ket d-flex justify-content-between align-items-center px-3 pb-3">
                     <p className="m-0 text-success fw-bold">{kelas.price}</p>
-                    <button className="btn btn-danger rounded-1">
+                    <button className="btn btn-danger rounded-1" onClick={() => pilihKelas(kelas.id)}>
                       {kelas.buy}
                     </button>
                   </div>
@@ -48,6 +64,10 @@ const KelasPage = () => {
         </Container>
       </div>
       <FaqComponent/>
+      <BuyClass 
+      show = {showKelas}
+      close= {tutupKelas}
+      idKelas = {idKelas}/>
     </div>
   );
 };

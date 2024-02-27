@@ -3,6 +3,7 @@ import { navLinks } from "../data/index";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import SignInForm from "../Modals/SignInForm";
+import * as Icon from "react-bootstrap-icons"
 
 const NavbarComponent = () => {
   const [changeColor, setChangeColor] = useState(false);
@@ -44,7 +45,7 @@ const NavbarComponent = () => {
         >
           <Container>
             <Navbar.Brand href="/" className="fs-3 fw-bold">
-              Course!
+              DigiEdu.
             </Navbar.Brand>
             <Navbar.Toggle
               aria-controls="responsive-navbar-nav"
@@ -71,11 +72,15 @@ const NavbarComponent = () => {
               </Nav>
               {localStorage.getItem("user") ? (
                 <>
-                  <h5 className="text-center fs-5">Welcome back, {localStorage.getItem('user')}!</h5>
+                <div className="text-center">
+                  {/* <h5 className="fs-5">Welcome back, {localStorage.getItem('user')}!</h5> */}
+                  <button className="btn btn-outline-danger border-none"><Icon.PersonCircle/></button>
+                </div>
+                  
                 </>
               ) : (
                 <>
-                  <div className="text-center">
+                  <div className="profile text-center">
                     <button
                       className="btn btn-outline-danger rounded-1"
                       onClick={openModal}
