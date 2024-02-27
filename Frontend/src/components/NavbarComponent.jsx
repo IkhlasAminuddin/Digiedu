@@ -57,10 +57,11 @@ const NavbarComponent = () => {
                   return (
                     <div className="nav-link text-center" key={data.id}>
                       <NavLink
-                        className={({ isActive, isPending }) =>
+                        className={({ isActive, isPending })  =>
                           isPending ? "pending" : isActive ? "active" : ""
                         }
                         to={data.path}
+                        id={data.text}
                         onClick={() => setExpanded(false)}
                         end
                       >
@@ -80,7 +81,7 @@ const NavbarComponent = () => {
                 </>
               ) : (
                 <>
-                  <div className="profile text-center">
+                  <div className="profile text-center" id="signInBtn">
                     <button
                       className="btn btn-outline-danger rounded-1"
                       onClick={openModal}

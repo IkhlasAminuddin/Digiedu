@@ -479,12 +479,28 @@ header {
 }
 
 /* STYLE SIGN IN MODAL */
+.signin-modal .modal-header ,
+.signin-modal .modal-footer{
+    background-color: #99acd8;
+}
+.signin-modal .modal-body{
+    background: linear-gradient(to left, var(--background-color), #de9d68, #f97e1a ) ;
+}
 
+/* STYLE SIGN UP MODAL */
+.signup-modal .modal-header ,
+.signup-modal .modal-footer{
+    background-color: #99acd8;
+}
+.signup-modal .modal-body{
+    background: linear-gradient(to left, var(--background-color), #de9d68, #f97e1a ) ;
+}
 /* STYLE MODAL BUY CLASS */
-.modal-open img{
+.buy-class .modal-body img{
     width: 100%;
-    height: 250px;
+    height: 300px;
 }
 .form-control {
     width: 100% !important
 }
+

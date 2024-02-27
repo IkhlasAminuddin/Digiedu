@@ -44,10 +44,18 @@ const FooterComponents = () => {
               </button>
             </div>
             <div className="social mt-3">
-              <i className="fa-brands fa-facebook"></i>
-              <i className="fa-brands fa-twitter"></i>
-              <i className="fa-brands fa-linkedin"></i>
-              <i className="fa-brands fa-youtube"></i>
+              <a href="https://www.facebook.com/ikhlas.aminuddin/" target="_blank">
+                <i className="fa-brands fa-facebook"></i>
+                </a>
+              <a href="www.twitter.com" target="_blank" style={{color:'#2176de'}}>
+                <i className="fa-brands fa-twitter"></i>
+                </a>
+              <a href="https://www.linkedin.com/in/ikhlasaminuddin/" target="_blank" style={{color:'#2176de'}}>
+                <i className="fa-brands fa-linkedin"></i>
+                </a>
+              <a href="https://www.youtube.com" target="_blank" style={{color:'red'}}>
+                <i className="fa-brands fa-youtube"></i>
+                </a>
             </div>
           </Col>
         </Row>

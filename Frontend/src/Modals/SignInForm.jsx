@@ -15,7 +15,6 @@ const SignInForm = (props) => {
     password: "",
   });
 
-
   const openPass = () => {
     setSeePass(true);
   };
@@ -41,17 +40,16 @@ const SignInForm = (props) => {
   };
 
   const login = () => {
-    localStorage.setItem('user', input.email)
-    closeModal()
-  }
+    localStorage.setItem("user", input.email);
+    closeModal();
+  };
 
-  console.log("input sign In:", input)
-
+  console.log("input sign In:", input);
 
   return (
     <>
-      <div className="signin-modal">
-        <Modal show={show} onHide={closeModal} className="mt-5 py-5">
+      <div>
+        <Modal show={show} onHide={closeModal} className="mt-5 py-5" dialogClassName="signin-modal">
           <Modal.Header>
             <Modal.Title>Sign In</Modal.Title>
           </Modal.Header>
@@ -59,46 +57,57 @@ const SignInForm = (props) => {
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" onChange={handleChange} name="email"/>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  onChange={handleChange}
+                  name="email"
+                />
               </Form.Group>
 
-              <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
+              <Form.Group
+                as={Row}
+                className="mb-3"
+                controlId="formBasicPassword"
+              >
                 <Form.Label>Password</Form.Label>
                 {seePass ? (
-                  <Row>
-                    <Col>
-                      <Form.Control
-                        type="text"
-                        placeholder="Password"
-                        name="password"
-                        onChange={handleChange}
-                        value={input.password}
-                      />
-                    </Col>
-                    <Col sm={2}>
-                      <Button variant="secondary" onClick={hidePass}>
-                        <Icon.Eye />
-                      </Button>
-                    </Col>
-                  </Row>
+                  <div>
+                    <Row>
+                      <Col>
+                        <Form.Control
+                          type="text"
+                          placeholder="Password"
+                          name="password"
+                          onChange={handleChange}
+                          value={input.password}
+                        />
+                      </Col>
+                      <Col sm={2}>
+                        <Button variant="secondary" onClick={hidePass}>
+                          <Icon.Eye />
+                        </Button>
+                      </Col>
+                    </Row>
+                  </div>
                 ) : (
                   <div>
-                  <Row>
-                    <Col >
-                      <Form.Control
-                        type="password"
-                        placeholder="Password"
-                        name="password"
-                        onChange={handleChange}
-                        value={input.password}
-                      />
-                    </Col>
-                    <Col sm={2}>
-                      <Button variant="secondary" onClick={openPass}>
-                        <Icon.EyeSlash />
-                      </Button>
-                    </Col>
-                  </Row>
+                    <Row>
+                      <Col>
+                        <Form.Control
+                          type="password"
+                          placeholder="Password"
+                          name="password"
+                          onChange={handleChange}
+                          value={input.password}
+                        />
+                      </Col>
+                      <Col sm={2}>
+                        <Button variant="secondary" onClick={openPass}>
+                          <Icon.EyeSlash />
+                        </Button>
+                      </Col>
+                    </Row>
                   </div>
                 )}
               </Form.Group>
@@ -106,7 +115,7 @@ const SignInForm = (props) => {
                 <Row>
                   <p>
                     No account yet?{" "}
-                    <Link onClick={openModalSignUp}>Sign Up!</Link>
+                    <Link onClick={openModalSignUp} id="signUpBtn">Sign Up!</Link>
                   </p>
                 </Row>
               </Form.Group>
@@ -116,7 +125,9 @@ const SignInForm = (props) => {
             <Button variant="secondary" onClick={closeModal}>
               Close
             </Button>
-            <Button variant="success" onClick={login}>Login</Button>
+            <Button variant="success" onClick={login}>
+              Login
+            </Button>
           </Modal.Footer>
         </Modal>
       </div>

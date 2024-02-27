@@ -9,8 +9,8 @@ const BuyClass = (props) => {
 
   return (
     <>
-      <div className="beli-kelas">
-        <Modal show={show} onHide={close} className="py-5 mt-5" size="lg">
+      <div>
+        <Modal show={show} onHide={close} className="py-5 mt-5" size="lg" dialogClassName="buy-class">
           {semuaKelas.map((kelas) =>
             kelas.id == idKelas ? (
               <>
