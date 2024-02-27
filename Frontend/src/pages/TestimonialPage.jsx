@@ -21,7 +21,7 @@ const TestimonialPage = () => {
               return (
                 <>
                   <Col key={data.id} className="mb-5">
-                    <p className="desc shadow-sm">{data.desc}</p>
+                    <p className="desc shadow-lg rounded-4">{data.desc}</p>
                     <div className="people">
                       <img src={data.image} alt="" />
                       <div>

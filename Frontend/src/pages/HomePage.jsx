@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import HeroImage from "../assets/img/hero.png";
+import HeroImage from "../assets/img/HomeImg.png";
 import { kelasTerbaru, dataSwiper } from "../data/index";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
