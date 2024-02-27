@@ -97,6 +97,10 @@ header {
 }
 
 @media screen and (max-width: 992px) {
+    header {
+        background: linear-gradient(to top,  #B7BBC4, #B7BBC4, #4068c3 )
+
+    }
     .homepage .header-box {
         padding-top: 8rem
     }
