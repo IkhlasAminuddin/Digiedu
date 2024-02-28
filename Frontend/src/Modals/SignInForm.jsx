@@ -25,6 +25,10 @@ const SignInForm = (props) => {
   const openModalSignUp = () => {
     setShowSignUp(true);
     closeModal();
+    setInput({
+      email: "",
+      password: ""
+    })
   };
 
   const closeModalSignUp = () => {
@@ -73,8 +77,8 @@ const SignInForm = (props) => {
                 <Form.Label>Password</Form.Label>
                 {seePass ? (
                   <div>
-                    <Row>
-                      <Col>
+                    <Row className="justify-content row-cols-2" >
+                      <Col sm={10} xs={10}>
                         <Form.Control
                           type="text"
                           placeholder="Password"
@@ -83,7 +87,7 @@ const SignInForm = (props) => {
                           value={input.password}
                         />
                       </Col>
-                      <Col sm={2}>
+                      <Col sm={2} xs={2}>
                         <Button variant="secondary" onClick={hidePass}>
                           <Icon.Eye />
                         </Button>
@@ -92,8 +96,8 @@ const SignInForm = (props) => {
                   </div>
                 ) : (
                   <div>
-                    <Row>
-                      <Col>
+                    <Row className="justify-content row-cols-2">
+                      <Col sm={10} xs={10}>
                         <Form.Control
                           type="password"
                           placeholder="Password"
@@ -102,7 +106,7 @@ const SignInForm = (props) => {
                           value={input.password}
                         />
                       </Col>
-                      <Col sm={2}>
+                      <Col sm={2} xs={2}>
                         <Button variant="secondary" onClick={openPass}>
                           <Icon.EyeSlash />
                         </Button>

@@ -47,7 +47,7 @@ const FooterComponents = () => {
               <a href="https://www.facebook.com/ikhlas.aminuddin/" target="_blank">
                 <i className="fa-brands fa-facebook"></i>
                 </a>
-              <a href="www.twitter.com" target="_blank" style={{color:'#2176de'}}>
+              <a href="https://www.twitter.com" target="_blank" style={{color:'#2176de'}}>
                 <i className="fa-brands fa-twitter"></i>
                 </a>
               <a href="https://www.linkedin.com/in/ikhlasaminuddin/" target="_blank" style={{color:'#2176de'}}>

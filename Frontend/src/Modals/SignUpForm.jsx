@@ -74,12 +74,11 @@ const SignUpForm = (props) => {
                   />
                 </Form.Group>
               </Row>
-              <Row>
                 <Form.Group className="mb-3">
                   <Form.Label>Password</Form.Label>
                   {seePass ? (
-                    <Row>
-                      <Col sm={10}>
+                    <Row className="row-cols-2 justify-content">
+                      <Col sm={10} xs={10}>
                         <Form.Control
                           type="text"
                           placeholder="Password"
@@ -87,15 +86,15 @@ const SignUpForm = (props) => {
                           onChange={handleChange}
                         />
                       </Col>
-                      <Col sm={2}>
+                      <Col sm={2} xs={2}>
                         <Button variant="secondary" onClick={hidePass}>
                           <Icon.Eye />
                         </Button>
                       </Col>
                     </Row>
                   ) : (
-                    <Row>
-                      <Col sm={10}>
+                    <Row className="row-cols-2 justify-content">
+                      <Col sm={10} xs={2}>
                         <Form.Control
                           type="password"
                           placeholder="Password"
@@ -103,7 +102,7 @@ const SignUpForm = (props) => {
                           onChange={handleChange}
                         />
                       </Col>
-                      <Col sm={2}>
+                      <Col sm={2} xs={2}>
                         <Button variant="secondary" onClick={openPass}>
                           <Icon.EyeSlash />
                         </Button>
@@ -111,12 +110,10 @@ const SignUpForm = (props) => {
                     </Row>
                   )}
                 </Form.Group>
-              </Row>
-              <Row>
                 <Form.Group className="mb-3">
                   <Form.Label>Retype the Password</Form.Label>
                   {seeRetype ? (
-                    <Row>
+                    <Row className="row-cols-2 justify-content">
                       <Col sm={10}>
                         <Form.Control
                           type="text"
@@ -132,7 +129,7 @@ const SignUpForm = (props) => {
                       </Col>
                     </Row>
                   ) : (
-                    <Row>
+                    <Row className="row-cols-2 justify-content">
                       <Col sm={10}>
                         <Form.Control
                           type="password"
@@ -149,7 +146,6 @@ const SignUpForm = (props) => {
                     </Row>
                   )}
                 </Form.Group>
-              </Row>
             </Form>
           </Modal.Body>
           <Modal.Footer>

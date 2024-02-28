@@ -75,7 +75,7 @@ const NavbarComponent = () => {
                 <>
                 <div className="text-center">
                   {/* <h5 className="fs-5">Welcome back, {localStorage.getItem('user')}!</h5> */}
-                  <button className="btn btn-outline-danger border-none"><Icon.PersonCircle/></button>
+                  <button className="btn btn-outline-dark border-none"><Icon.PersonCircle/></button>
                 </div>
                   
                 </>
